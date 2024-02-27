@@ -2,16 +2,10 @@ import { HTMLAttributes } from 'react';
 
 type _signInButtonProps = {} & HTMLAttributes<HTMLButtonElement>;
 const _signInButton = (props: _signInButtonProps) => {
-  function handleKakaoLogin() {
-    window.Kakao?.Auth.authorize({
-      redirectUri: 'http://localhost:3000/auth',
-    });
-  }
-
   return (
-    <button {...props} onClick={handleKakaoLogin}>
-      카카오로그인
-    </button>
+    <a href='http://13.210.209.64:8080/oauth2/authorization/kakao?redirect_uri=http://localhost:3000/auth'>
+      카카오 로그인
+    </a>
   );
 };
 

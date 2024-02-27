@@ -1,6 +1,6 @@
 'use client';
-import { KakaoLoginComponents } from '../app/components/auth/kakao/KakaoLogin.components';
-import { NaverLoginComponents } from '../app/components/auth/naver/NaverLogin.components';
+import { KakaoLoginComponents } from './core/components/auth/kakao/KakaoLogin.components';
+import { NaverLoginComponents } from './core/components/auth/naver/naver/NaverLogin.components';
 
 declare global {
   interface Window {

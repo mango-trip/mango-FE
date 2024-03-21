@@ -1,6 +1,7 @@
 'use client';
-import { KakaoLoginComponents } from './core/components/auth/kakao/KakaoLogin.components';
-import { NaverLoginComponents } from './core/components/auth/naver/naver/NaverLogin.components';
+import { ConfigProvider } from 'antd';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 declare global {
   interface Window {
@@ -11,12 +12,17 @@ declare global {
 
 function Home() {
   return (
-    <>
+    <DIV_Home>
       <h1>{'mango-trip'}</h1>
-      <NaverLoginComponents.SigninButton />
-      <KakaoLoginComponents.SigninButton />
-    </>
+    </DIV_Home>
   );
 }
+
+const DIV_Home = styled.div`
+  h1 {
+    margin: 0;
+    display: none;
+  }
+`;
 
 export default Home;

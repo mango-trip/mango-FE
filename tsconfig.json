@@ -26,6 +26,12 @@
     "paths": {
       "@/*": [
         "./front/*"
+      ],
+      "@core/*": [
+        "./src/app/core/*"
+      ],
+      "@public/*": [
+        "./public/*"
       ]
     }
   },

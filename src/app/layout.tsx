@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import './global.css';
+import { ConfigProvider } from 'antd';
+import { Color } from '@public/mango-library/color';
+import { BorderRadius } from '@public/mango-library/box';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +19,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
-      <body className={inter.className}>{children}</body>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: Color.primary,
+            borderRadius: 20,
+            colorBgContainer: Color.primary,
+          },
+        }}
+      >
+        <body className={inter.className}>{children}</body>
+      </ConfigProvider>
     </html>
   );
 }

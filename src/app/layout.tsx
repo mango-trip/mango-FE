@@ -4,6 +4,7 @@ import './global.css';
 import { ConfigProvider } from 'antd';
 import { Color } from '@mango-library/color';
 import { BorderRadius } from '@mango-library/box';
+import { AntdConfig } from '@mango-library/antd/config';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,16 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
+      <link rel='icon' href='./favicon.ico' sizes='any' />
       <ConfigProvider
         theme={{
-          token: {
-            borderRadius: 20,
-            colorPrimary: Color.primary,
-            colorPrimaryBg: Color.primary,
-            colorPrimaryText: Color.white,
-            colorText: Color.gray[300],
-            colorBgContainer: Color.white,
-          },
+          token: AntdConfig.Token,
+          components: AntdConfig.Components,
         }}
       >
         <body className={inter.className}>{children}</body>

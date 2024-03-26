@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './global.css';
 import { ConfigProvider } from 'antd';
-import { Color } from '@public/mango-library/color';
-import { BorderRadius } from '@public/mango-library/box';
+import { Color } from '@mango-library/color';
+import { BorderRadius } from '@mango-library/box';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,9 +22,12 @@ export default function RootLayout({
       <ConfigProvider
         theme={{
           token: {
-            colorPrimary: Color.primary,
             borderRadius: 20,
-            colorBgContainer: Color.primary,
+            colorPrimary: Color.primary,
+            colorPrimaryBg: Color.primary,
+            colorPrimaryText: Color.white,
+            colorText: Color.gray[300],
+            colorBgContainer: Color.white,
           },
         }}
       >

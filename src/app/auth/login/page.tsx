@@ -1,10 +1,10 @@
 'use client';
 import styled from 'styled-components';
-import { NaverLoginComponents } from '@core/components/auth/naver/naver/NaverLogin.components';
-import { KakaoLoginComponents } from '@core/components/auth/kakao/KakaoLogin.components';
-import { Color } from '@public/mango-library/color';
-import { BorderRadius } from '@public/mango-library/box';
-import Image from 'next/image';
+import { NaverLoginComponents } from '@components/auth/naver/naver/NaverLogin.components';
+import { KakaoLoginComponents } from '@components/auth/kakao/KakaoLogin.components';
+import { Color } from '@mango-library/color';
+import { BorderRadius } from '@mango-library/box';
+import MainLogo from '@components/logo/mainLogo';
 
 declare global {
   interface Window {
@@ -18,12 +18,7 @@ function LoginPage() {
     <DIV_LoginPage>
       <div className='login-box'>
         <div className='login-box__title'>
-          <Image
-            width={40}
-            height={40}
-            src={'/mango-library/mango-logo.png'}
-            alt='망고로고'
-          />
+          <MainLogo />
           <h2> 로그인 또는 회원가입</h2>
         </div>
         <div className='login-box__buttons'>

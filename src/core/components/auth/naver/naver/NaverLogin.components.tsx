@@ -1,8 +1,7 @@
-import { BorderRadius } from '@public/mango-library/box';
-import { Color } from '@public/mango-library/color';
-import { Button } from 'antd';
+import { BorderRadius } from '@mango-library/box';
+import { Color } from '@mango-library/color';
 import Image from 'next/image';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const _signInButton = () => {
   return (

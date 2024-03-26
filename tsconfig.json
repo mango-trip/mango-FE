@@ -24,11 +24,20 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./front/*"
+      "@components/*": [
+        "./src/core/components/*"
       ],
-      "@core/*": [
-        "./src/app/core/*"
+      "@hooks/*": [
+        "./src/core/hooks/*"
+      ],
+      "@templates/*": [
+        "./src/core/templates/*"
+      ],
+      "@mango-library/*": [
+        "./src/core/mango-library/*"
+      ],
+      "@type/*": [
+        "./src/core/type/*"
       ],
       "@public/*": [
         "./public/*"

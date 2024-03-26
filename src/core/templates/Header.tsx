@@ -9,7 +9,12 @@ const Header = () => {
   return (
     <DIV_Header>
       <div>{/* flex */}</div>
-      <MainLogo />
+      <MainLogo
+        imageProps={{
+          width: 30,
+          height: 30,
+        }}
+      />
       <div className='header__right-side'>
         <Profile
           styles={[
@@ -30,7 +35,7 @@ const DIV_Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  padding: 12px 12px;
   .header {
     &__right-side {
       display: flex;

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 interface MainLogoProps {
-  imageProps?: ImageProps;
+  imageProps?: Partial<ImageProps>;
 }
 
 const MainLogo = (props: MainLogoProps) => {

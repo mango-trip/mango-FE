@@ -10,7 +10,7 @@ const _signInButton = () => {
         width={30}
         height={30}
         src='/sns/naver/btnG_icon.png'
-        alt='네이버 아이콘'
+        alt='네이버아이콘'
       />
       <span className='naver-login__text'>네이버 로그인</span>
     </A_NaverLoginButton>

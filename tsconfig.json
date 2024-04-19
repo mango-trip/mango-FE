@@ -24,11 +24,17 @@
       }
     ],
     "paths": {
+      "@api/*": [
+        "./src/core/api/*"
+      ],
       "@components/*": [
         "./src/core/components/*"
       ],
-      "@hooks/*": [
-        "./src/core/hooks/*"
+      "@constants/*": [
+        "./src/core/constants/*"
+      ],
+      "@modules/*": [
+        "./src/core/modules/*"
       ],
       "@templates/*": [
         "./src/core/templates/*"

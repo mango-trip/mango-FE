@@ -1,5 +1,5 @@
 import { HoverStyle } from '@mango-library/hover';
-import { PropsWithStyles, StyleProps } from '@type/style';
+import { PropsWithStyles, StyleProps } from '../../type/style';
 import { Cursor } from 'mongoose';
 import { ImageProps } from 'next/image';
 import React from 'react';

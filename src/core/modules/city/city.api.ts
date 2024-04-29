@@ -1,4 +1,4 @@
-import { _axios } from '@api/_axios';
+import { _axiosApi } from '@api/_axiosApi';
 import { ApiErrorResponse } from '@type/api';
 import { GetParams } from '@type/reactQuery';
 import {
@@ -8,8 +8,8 @@ import {
 
 export const getCitiesWithCursorApi = (
   params?: GetParams<SearchCityQueryParams>,
-): Promise<SearchCityResponseWithCursor | ApiErrorResponse> => {
-  return _axios
+): Promise<SearchCityResponseWithCursor> => {
+  return _axiosApi
     .get(`/front/api/v1/city`, {
       params,
     })

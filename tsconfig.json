@@ -36,6 +36,9 @@
       "@modules/*": [
         "./src/core/modules/*"
       ],
+      "@utils/*": [
+        "./src/core/utils/*"
+      ],
       "@templates/*": [
         "./src/core/templates/*"
       ],

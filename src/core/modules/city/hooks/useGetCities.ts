@@ -12,21 +12,20 @@ import { ApiErrorResponse } from '@type/api';
 import { getCitiesWithCursorApi } from '@modules/city/city.api';
 
 type UseGetCitiesWithCursorReturnType = {
-  getCitiesWithCursor: UseQueryResultType<
-    SearchCityResponseWithCursor | ApiErrorResponse
-  >;
+  cities?: SearchCityResponseWithCursor;
+  getCitiesWithCursor: UseQueryResultType<SearchCityResponseWithCursor>;
 };
 
 type UseGetCitiesWithCursorProps = {
   params?: GetParams<SearchCityQueryParams>;
-  options?: UseQueryOptionType<SearchCityResponseWithCursor | ApiErrorResponse>;
+  options?: UseQueryOptionType<SearchCityResponseWithCursor>;
 };
 
 export const useGetCitiesWithCursor = (
   props?: UseGetCitiesWithCursorProps,
 ): UseGetCitiesWithCursorReturnType => {
   const getCitiesWithCursor = useQuery(
-    ['getCitiesWithCursorApi'],
+    ['getCitiesWithCursorApi', props?.params],
     () => getCitiesWithCursorApi(props?.params),
     {
       ...props?.options,
@@ -39,5 +38,5 @@ export const useGetCitiesWithCursor = (
     },
   );
 
-  return { getCitiesWithCursor };
+  return { cities: getCitiesWithCursor.data, getCitiesWithCursor };
 };

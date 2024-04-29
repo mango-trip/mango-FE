@@ -1,13 +1,14 @@
 import { GetParams, PostParams } from '@type/reactQuery';
-import { _axios } from '@api/_axios';
+import { _axiosApi } from '@api/_axiosApi';
 import {
   CreatePlanRequest,
   CreatePlanResponse,
   Plan,
 } from '@modules/plan/plan.type';
+import { _axiosAuthApi } from '@api/_axiosAuthApi';
 
 export const getPlanDetailApi = (params?: GetParams): Promise<Plan> => {
-  return _axios
+  return _axiosApi
     .get(`/front/api/v1/plan/${params?.id}`, {
       params,
     })
@@ -17,7 +18,7 @@ export const getPlanDetailApi = (params?: GetParams): Promise<Plan> => {
 export const createPlanApi = (
   params: PostParams<CreatePlanRequest>,
 ): Promise<CreatePlanResponse> => {
-  return _axios
+  return _axiosAuthApi
     .post(`/front/api/v1/plan`, params.variable)
     .then((res) => res.data);
 };

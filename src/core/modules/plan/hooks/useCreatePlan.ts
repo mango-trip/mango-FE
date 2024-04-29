@@ -17,18 +17,18 @@ type UseCreatePlanReturnType = {
 };
 
 type UseCreatePlanProps = {
-  options: UseQueryOptionType<CreatePlanResponse>;
+  options?: UseQueryOptionType<CreatePlanResponse>;
 };
 
 export const useCreatePlan = (
-  props: UseCreatePlanProps,
+  props?: UseCreatePlanProps,
 ): UseCreatePlanReturnType => {
   const createPlan = useMutation<
     CreatePlanResponse,
     AxiosError<ApiErrorResponse>,
     PostParams<CreatePlanRequest>
   >((params) => createPlanApi(params), {
-    ...props.options,
+    ...props?.options,
   });
 
   return { createPlan };

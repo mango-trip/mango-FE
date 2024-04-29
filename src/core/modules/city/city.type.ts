@@ -10,5 +10,6 @@ export type SearchCityResponse = {
   countryName: string;
 };
 
-export type SearchCityResponseWithCursor =
-  ResponseWithCursor<SearchCityResponse>;
+export type SearchCityResponseWithCursor = ResponseWithCursor<
+  SearchCityResponse[]
+>;

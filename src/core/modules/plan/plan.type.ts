@@ -5,8 +5,8 @@ export type Plan = {
   id: number;
   title: string;
   planCityList: string[];
-  tripStartDate: Date;
-  tripEndDate: Date;
+  tripStartDate: string;
+  tripEndDate: string;
   totalAmount: number;
   fileList: FileType[];
   content: string;

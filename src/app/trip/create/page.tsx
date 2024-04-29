@@ -1,13 +1,29 @@
 'use client';
 import SearchOutlined from '@ant-design/icons/SearchOutlined';
+import { useGetCitiesWithCursor } from '@modules/city/hooks/useGetCities';
+import { useCreatePlan } from '@modules/plan/hooks/useCreatePlan';
+import { CreatePlanRequest } from '@modules/plan/plan.type';
 import { Form, Button, Input, Upload } from 'antd';
-import FormItem from 'antd/es/form/FormItem';
 import TextArea from 'antd/es/input/TextArea';
 import React from 'react';
+import { mangoDate } from '@utils/date';
 
 function TripCreatePage() {
-  function handleFinish(values: any) {
-    console.log({ values });
+  const { getCitiesWithCursor } = useGetCitiesWithCursor();
+  getCitiesWithCursor;
+  const { createPlan } = useCreatePlan();
+
+  async function handleFinish(values: any) {
+    const dummy: CreatePlanRequest = {
+      cityIdList: [1],
+      title: '',
+      tripStartDate: mangoDate(new Date()).format('yyyy-MM-ddTHH:mm:ss'),
+      tripEndDate: mangoDate(new Date()).format('yyyy-MM-ddTHH:mm:ss'),
+      totalAmount: 20000,
+      content: 'dummy data',
+      fileIdList: [1],
+    };
+    await createPlan.mutateAsync({ variable: { ...dummy } });
   }
   return (
     <Form name='trip' onFinish={handleFinish}>
